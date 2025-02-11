@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:sayfa_gecis_uygulamasi/Kisiler.dart';
 import 'package:sayfa_gecis_uygulamasi/SayfaB.dart';
 
 class SayfaA extends StatefulWidget {
-  const SayfaA({super.key});
+
+  Kisiler kisi;
+  SayfaA({required this.kisi});
 
   @override
   State<SayfaA> createState() => _SayfaAState();
@@ -26,6 +29,10 @@ class _SayfaAState extends State<SayfaA> {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => SayfaB()));
               },
             ),
+            Text("İsim : ${widget.kisi.isim}"),
+            Text("Yaş : ${widget.kisi.yas}"),
+            Text("Boy : ${widget.kisi.boy}"),
+            Text("Bekar mı : ${widget.kisi.bekarMi}"),
           ],
         ),
       ),

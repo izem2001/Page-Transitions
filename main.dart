@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sayfa_gecis_uygulamasi/Kisiler.dart';
 import 'package:sayfa_gecis_uygulamasi/SayfaA.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -46,7 +48,9 @@ class _AnasayfaState extends State<Anasayfa> {
             TextButton(
               child: Text("Sayfa A ya git"),
               onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => SayfaA()));
+
+                var kisi = Kisiler(isim: "İzem", yas: 23, boy: 1.64, bekarMi: true,);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => SayfaA(kisi: kisi,)));
               },
             ),
           ],
